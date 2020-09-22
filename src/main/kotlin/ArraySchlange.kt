@@ -10,10 +10,10 @@ fun main(){
     val donald = Person("Donald")
     val petra = Person("Petra")
 
-    val schlange : Queue<Person> = ArraySchlange()
+    val schlange : Queue<Person> = ArrayWickelSchlange()
 }
 
-class ArraySchlange(size : Int = 1) : Queue<Person>{
+class ArrayWickelSchlange(size : Int = 1) : Queue<Person>{
 
     var schlange = Array<Person>(size){Person("DUMMY")}
 
