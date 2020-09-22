@@ -34,10 +34,10 @@ class ArraySchlange(size : Int = 10) : Queue<Person>{
 
 
     // Unschöner Workaround um nullables zu vermeiden
-    var schlange = Array<Person>(size){Person("DUMMY")}
+    private var schlange = Array<Person>(size){Person("DUMMY")}
 
     // Erstes leeres Feld der Schlange
-    var pos = 0
+    private var pos  = 0
 
     override fun add(element: Person?): Boolean {
         if (pos >= schlange.size-1){
