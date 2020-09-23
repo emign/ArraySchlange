@@ -62,11 +62,15 @@ class ArrayWickelSchlange(size : Int = 6) : Queue<Person>{
     }
 
     override fun remove(): Person {
-        val first = schlange[head]
-        schlange[head] = Person("DUMMY")
-        head = (head+1)%schlange.size
-        count--
-        return first
+        if (count > 0) {
+            val first = schlange[head]
+            schlange[head] = Person("DUMMY")
+            head = (head+1)%schlange.size
+            count--
+            return first
+        }
+        println("Schlange leer. Nimm dennoch einen dummy")
+        return Person("DUMMY")
     }
 
     override val size: Int
