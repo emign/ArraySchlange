@@ -25,12 +25,13 @@ fun main(){
 
     println(schlange.size)
     println(schlange.remove())
+    println(schlange.size)
     println(schlange.remove())
     println(schlange.remove())
     println(schlange.remove())
 }
 
-class ArraySchlange(size : Int = 10) : Queue<Person>{
+class ArraySchlange(size : Int = 6) : Queue<Person>{
 
 
     // Unschöner Workaround um nullables zu vermeiden
@@ -40,7 +41,7 @@ class ArraySchlange(size : Int = 10) : Queue<Person>{
     private var pos  = 0
 
     override fun add(element: Person?): Boolean {
-        if (pos >= schlange.size-1){
+        if (pos >= schlange.size){
             println("Fehler: Schlange voll")
             return false
         }
@@ -57,6 +58,7 @@ class ArraySchlange(size : Int = 10) : Queue<Person>{
         for (i in 0..schlange.size-2){
            schlange[i] = schlange[i+1]
        }
+        schlange[schlange.lastIndex] = Person("DUMMY")
         return first
     }
 
