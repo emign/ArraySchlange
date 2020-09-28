@@ -9,11 +9,10 @@ class Person (val name: String, var nachfolger : Person? = null) {
     }
 
     fun count() : Int {
-        if (nachfolger == null){
-            return 0
-        }
-        else {
-            return nachfolger!!.count()+1
+        return if (nachfolger == null){
+            0
+        } else {
+            nachfolger!!.count()+1
         }
     }
 
