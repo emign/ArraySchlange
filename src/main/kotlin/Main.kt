@@ -8,5 +8,19 @@ fun main(){
 	val donald = Person("Donald")
 	val petra = Person("Petra")
 
-	val schlange : Queue<Person> = ArraySchlange()
+	val schlange : Queue<Person> = VerweisSchlange(hans)
+
+	schlange.add(peter)
+	schlange.add(maria)
+	schlange.add(gunter)
+	schlange.add(donald)
+	schlange.add(petra)
+	println(schlange.remove())
+	println(schlange.remove())
+	println(schlange.remove())
+	println(schlange.remove())
+	println(schlange.remove())
+	println(schlange.remove())
+	println(schlange.size)
+
 }

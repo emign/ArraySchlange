@@ -1,16 +1,28 @@
 import java.util.*
 
-class VerweisSchlange : Queue<Person> {
+class VerweisSchlange(var anfang : Person?) : Queue<Person> {
 	override fun add(element: Person?): Boolean {
-		TODO("Not yet implemented")
+		if (anfang == null){
+			anfang = element
+		}
+		anfang?.add(element!!)
+		return true
 	}
 
-	override fun remove(): Person {
-		TODO("Not yet implemented")
+	override fun remove(): Person? {
+		val gemerkterAnfang = anfang
+		anfang = anfang?.nachfolger
+		return gemerkterAnfang
 	}
 
 	override val size: Int
-		get() = TODO("Not yet implemented")
+		get() {
+		if (anfang == null){
+			return 0
+		} else {
+			return anfang!!.count()
+		}
+	}
 
 	override fun addAll(elements: Collection<Person>): Boolean {
 		return true
