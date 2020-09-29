@@ -10,7 +10,7 @@ class Person (val name: String, var nachfolger : Person? = null) {
 
     fun count() : Int {
         return if (nachfolger == null){
-            0
+            1
         } else {
             nachfolger!!.count()+1
         }

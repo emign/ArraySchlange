@@ -1,11 +1,12 @@
 import java.util.*
 
 class VerweisSchlange(var anfang : Person?) : Queue<Person> {
-	override fun add(element: Person?): Boolean {
+	override fun add(element: Person): Boolean {
 		if (anfang == null){
 			anfang = element
+			return true
 		}
-		anfang?.add(element!!)
+		anfang?.add(element)
 		return true
 	}
 
