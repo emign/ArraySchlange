@@ -16,7 +16,7 @@ fun main(){
 	schlange.add(gunter)
 	schlange.add(donald)
 	schlange.add(petra)
-	println(schlange.remove())
+
 
 
 	println(schlange.size)

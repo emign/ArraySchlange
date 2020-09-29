@@ -21,7 +21,7 @@ class VerweisSchlange(var anfang : Person?) : Queue<Person> {
 		if (anfang == null){
 			return 0
 		} else {
-			return anfang!!.count()
+			return anfang!!.count()+1
 		}
 	}
 
