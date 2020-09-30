@@ -33,12 +33,19 @@ class VerweisSchlange(var anfang : Person?) : Queue<Person> {
 
 	}
 
+	fun insert(element: Person, before: Person ){
+		anfang = anfang?.insert(element, before)
+	}
+
 	override fun iterator(): MutableIterator<Person> {
 		return mutableListOf(Person("DUMMY")).iterator()
 	}
 
 	override fun contains(element: Person?): Boolean {
-		return true
+		if (anfang != null){
+			return anfang!!.contains(element!!)
+		}
+		return false
 	}
 
 	override fun containsAll(elements: Collection<Person>): Boolean {
@@ -49,7 +56,8 @@ class VerweisSchlange(var anfang : Person?) : Queue<Person> {
 		return true
 	}
 
-	override fun remove(element: Person?): Boolean {
+	override fun remove(element: Person): Boolean {
+		anfang = anfang?.remove(element)
 		return true
 	}
 
@@ -77,6 +85,10 @@ class VerweisSchlange(var anfang : Person?) : Queue<Person> {
 		return Person("Dummy")
 	}
 
+	fun print(){
+		println("Schlange:")
+		anfang?.print()
+	}
 
 
 }
