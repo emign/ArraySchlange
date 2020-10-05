@@ -7,7 +7,6 @@ class Person (val name: String, var nachfolger : Person? = null) {
             nachfolger = nachfolger?.remove(element)
             return this
         }
-
     }
 
     fun insert(element: Person, before: Person) : Person? {

@@ -20,11 +20,7 @@ fun main(){
 	schlange.add(donald)
 	schlange.add(petra)
 	schlange.print()
-	schlange.remove(peter)
-	schlange.print()
-
-
-
+	schlange.remove(petra)
 	schlange.print()
 
 
